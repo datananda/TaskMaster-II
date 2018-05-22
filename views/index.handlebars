@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col s12 m4">
+        <h2 class="blue-text text-darken-0">To Do</h2>
+        {{#each tasks}}
+            {{#if todo}}
+                {{> task-card darken=0 first=1 last=0}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="col s12 m4">
+        <h2 class="blue-text text-darken-2">Doing</h2>
+        {{#each tasks}}
+            {{#if doing}}
+                {{> task-card darken=2 first=0 last=0}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="col s12 m4">
+        <h2 class="blue-text text-darken-4">Done</h2>
+        {{#each tasks}}
+            {{#if done}}
+                {{> task-card darken=4 first=0 last=1}}
+            {{/if}}
+        {{/each}}
+    </div>
+</div>

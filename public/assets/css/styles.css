@@ -1,0 +1,48 @@
+h2 {
+    font-size: 2.5rem;
+}
+
+.card .card-action {
+    overflow: auto;
+    padding: 0;
+}
+
+.card .card-content {
+    padding: 18px;
+}
+
+.collapsible {
+    border: none;
+    margin: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.move-button,
+.move-button i {
+    margin: 0!important;
+}
+
+#task-form {
+    position: absolute;
+    width: calc(100vw - 60px);
+    top: -50px;
+    right: 12px;
+}
+
+#add-button {
+    cursor: pointer;
+    margin: 10px 0 0 8px;
+    font-size: 2rem;
+    color: grey;
+}
+
+.input-field {
+    margin-top: 0;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #2196F3;
+    -webkit-box-shadow: 0 1px 0 0 #2196F3;
+    box-shadow: 0 1px 0 0 #2196F3;
+}

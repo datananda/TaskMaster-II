@@ -1,0 +1,18 @@
+<div class="card blue darken-{{darken}}">
+    <div class="card-content white-text">
+        <span class="card-title">Task {{id}}</span>
+        <p>{{text}}</p>
+    </div>
+    <div class="card-action white">
+            {{#unless first}}
+            <a class="move-button waves-effect waves-blue btn-flat blue-text text-darken-{{darken}} left" data-id="{{id}}" data-state="{{state}}" id="backward">
+                <i class="material-icons left">arrow_back</i>
+            </a>
+        {{/unless}}
+        {{#unless last}}
+            <a class="move-button waves-effect waves-blue btn-flat blue-text text-darken-{{darken}} right" data-id="{{id}}" data-state="{{state}}" id="forward">
+                <i class="material-icons left">arrow_forward</i>
+            </a>
+        {{/unless}}
+    </div>
+</div>
