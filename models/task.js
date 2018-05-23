@@ -1,21 +1,11 @@
-const orm = require("../config/orm.js");
+module.exports = function (sequelize, DataTypes) {
+    const Task = sequelize.define("Task", {
+        text: DataTypes.STRING,
+        state: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        },
+    });
 
-const task = {
-    all: (cb) => {
-        orm.selectAll("tasks", (data) => {
-            cb(data);
-        });
-    },
-    insert: (values, cb) => {
-        orm.insertOne("tasks", ["text", "state"], values, (res) => {
-            cb(res);
-        });
-    },
-    update: (objColVals, condition, cb) => {
-        orm.updateOne("tasks", objColVals, condition, (res) => {
-            cb(res);
-        });
-    },
+    return Task;
 };
-
-module.exports = task;
