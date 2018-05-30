@@ -23,7 +23,10 @@ function getStateBooleans(inTaskArray) {
 
 module.exports = (app) => {
     app.get("/", (req, res) => {
-        db.Task.findAll({}).then((data) => {
+        db.Task.findAll({
+            include: [db.Color],
+            order: [["updatedAt", "DESC"]],
+        }).then((data) => {
             const dataVals = data.map(dataRow => dataRow.dataValues);
             res.render("index", {
                 tasks: getStateBooleans(dataVals),
@@ -31,18 +34,29 @@ module.exports = (app) => {
         });
     });
 
-    // router.post("/tasks", (req, res) => {
-    //     task.insert([req.body.text, req.body.state], (result) => {
-    //         res.json({ id: result.insertId });
-    //     });
-    // });
+    app.post("/tasks", (req, res) => {
+        db.Color.findOrCreate({
+            where: {
+                color: req.body.color,
+            },
+        }).spread((color) => {
+            db.Task.create({
+                text: req.body.text,
+                state: req.body.state,
+                ColorId: color.dataValues.id,
+            }).then((result) => {
+                res.json(result);
+            });
+        });
+    });
 
-    // router.put("/tasks/:id", (req, res) => {
-    //     task.update(req.body.objColVals, req.body.condition, (result) => {
-    //         if (result.changedRows === 0) {
-    //             return res.status(404).end();
-    //         }
-    //         return res.status(200).end();
-    //     });
-    // });
+    app.put("/tasks/:id", (req, res) => {
+        db.Task.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        }).then((result) => {
+            res.json(result);
+        });
+    });
 };

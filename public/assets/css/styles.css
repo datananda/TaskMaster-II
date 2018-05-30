@@ -32,7 +32,7 @@ h2 {
 
 #add-button {
     cursor: pointer;
-    margin: 10px 0 0 8px;
+    margin: 15px 0 0 8px;
     font-size: 2rem;
     color: grey;
 }
@@ -42,7 +42,26 @@ h2 {
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #2196F3;
-    -webkit-box-shadow: 0 1px 0 0 #2196F3;
-    box-shadow: 0 1px 0 0 #2196F3;
+    border-bottom: 1px solid #9e9e9e;
+    -webkit-box-shadow: 0 1px 0 0 #9e9e9e;
+    box-shadow: 0 1px 0 0 #9e9e9e;
+}
+
+.dropdown-trigger {
+    color: #9e9e9e;
+    height: 2.5rem;
+    width: 100%;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 8px;
+    padding: 0 12px;
+    text-align: left;
+    border: 1px solid #9e9e9e;
+    text-transform: none;
+}
+
+.dropdown-trigger:focus, .dropdown-trigger:active {
+    border: 1px solid #9e9e9e;
+    -webkit-box-shadow: 0 1px 0 0 #9e9e9e;
+    box-shadow: 0 1px 0 0 #9e9e9e;
 }
