@@ -16,7 +16,7 @@ app.set("view engine", "handlebars");
 
 require("./routes/tasks.js")(app);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log(`App listening on http://localhost:${PORT}`);
     });
